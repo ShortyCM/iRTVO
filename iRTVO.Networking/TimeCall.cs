@@ -25,12 +25,12 @@ namespace iRTVO.Networking
         {
             if (LogManager.IsLoggingEnabled())
             {
-                int time = (Environment.TickCount - StartTicks);
-                if (time > WarnThreshold)
-                    logger.Warn("{0} took {1} ms", MethodName, time / 1000);
+                int elapsedMilliseconds = Environment.TickCount - StartTicks;
+                if (elapsedMilliseconds > WarnThreshold)
+                    logger.Warn("{0} took {1} ms", MethodName, elapsedMilliseconds);
                 else
-                    logger.Trace("{0} took  {1} ms", MethodName,  time / 1000);
-                
+                    logger.Trace("{0} took  {1} ms", MethodName, elapsedMilliseconds);
+
             }
         }
     }
