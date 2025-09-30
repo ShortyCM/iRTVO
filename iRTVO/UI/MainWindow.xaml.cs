@@ -181,9 +181,9 @@ namespace iRTVO
             if (!SharedData.runOverlay)
                 return;
             TriggerTypes trigger;
-            while (SharedData.triggers.Count > 0)
+            object triggerObject;
+            while (SharedData.triggers.TryPop(out triggerObject))
             {
-                object triggerObject = SharedData.triggers.Pop();
                 if (triggerObject is TriggerInfo)
                 {
                     TriggerInfo t = triggerObject as TriggerInfo;
